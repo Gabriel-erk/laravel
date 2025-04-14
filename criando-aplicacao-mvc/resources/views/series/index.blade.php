@@ -3,10 +3,10 @@
 --}}
 <x-layout title="Séries">
 
-    <a href="/series/create">Adicionar</a>
-    <ul>
+    <a href="{{asset('../resources/views/series/create.blade.php')}}" class="btn btn-dark mb-2">Adicionar</a>
+    <ul class="list-group">
         @foreach ($series as $serie)
-            <li>
+            <li class="list-group-item">
                 {{ $serie }}
             </li>
         @endforeach

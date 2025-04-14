@@ -10,9 +10,11 @@
 </head>
 
 <body>
-    <h2>{{ $title }}</h2>
-    {{-- é chamado de slot tudo que vai ficar no corpo do nosso site --}}
-    {{ $slot }}
+    <div class="container">
+        <h2>{{ $title }}</h2>
+        {{-- é chamado de slot tudo que vai ficar no corpo do nosso site --}}
+        {{ $slot }}
+    </div>
 </body>
 
 </html>
