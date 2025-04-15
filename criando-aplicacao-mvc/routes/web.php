@@ -7,5 +7,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('series', [SeriesController::class, 'index']);
-Route::get('series/criar', [SeriesController::class, 'create']);
+Route::get('series', [SeriesController::class, 'index'])->name('series');
+Route::get('series/criar', [SeriesController::class, 'create'])->name('series.criar');
+Route::post('series/salvar',[SeriesController::class, 'store'])->name('series.salvar');
