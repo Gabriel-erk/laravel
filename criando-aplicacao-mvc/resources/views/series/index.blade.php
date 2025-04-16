@@ -3,12 +3,18 @@
 --}}
 <x-layout title="Séries">
 
-    <a href="{{route('series.criar')}}" class="btn btn-dark mb-2">Adicionar</a>
+    <a href="{{ route('series.criar') }}" class="btn btn-dark mb-2">Adicionar</a>
     <ul class="list-group">
         @foreach ($series as $serie)
-            <li class="list-group-item">
-                {{ $serie->nome }}
-            </li>
+            <ol class="list-group list-group-numbered">
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">{{ $serie->nome }}</div>
+                        Epísodios: {{ $serie->episodios }}
+                    </div>
+                    <span class="badge text-bg-primary rounded-pill">+{{ $serie->clasificacao_indicativa }}</span>
+                </li>
+            </ol>
         @endforeach
     </ul>
 

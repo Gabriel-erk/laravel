@@ -1,16 +1,20 @@
 @import "~bootstrap/scss/bootstrap";
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 /* Fonte padrão semelhante à do Laravel */
 // @import url('https://fonts.bunny.net/css?family=Nunito');
 
-// :root {
-//     --font-sans: 'Nunito', sans-serif;
-// }
+:root {
+    // --font-sans: 'Nunito', sans-serif;
+    --fonte-primaria: 'Poppins', sans-serif;
+    --fonte-secundaria: 'Roboto', sans-serif;
+}
 
-// body {
-//     font-family: var(--font-sans);
-//     background-color: #f8fafc;
-//     color: #212529;
-//     margin: 0;
-//     padding: 0;
-// }
+h2 {
+    font-family: var(--fonte-primaria);
+}
+
+a {
+    font-family: var(--fonte-secundaria);
+}

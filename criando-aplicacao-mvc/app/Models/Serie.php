@@ -9,9 +9,10 @@ use Illuminate\Notifications\Notifiable;
 class Serie extends Model
 {
     use HasFactory, Notifiable;
-    protected $table = "series";
 
     protected $fillable = [
         'nome',
+        'episodios',
+        'classificacao_indicativa'
     ];
 }   

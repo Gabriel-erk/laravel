@@ -11,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('series', function (Blueprint $table) {
-            $table->id();
-            $table->string('nome', 128);
-            $table->integer('episodios');
-            $table->integer('clasificacao_indicativa');
-            $table->timestamps();
+        Schema::table('series', function (Blueprint $table) {
+            //
         });
     }
 
@@ -25,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('series');
+        Schema::table('series', function (Blueprint $table) {
+            //
+        });
     }
 };

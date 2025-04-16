@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Serie;
+use Exception;
 use Illuminate\Http\Request;
 
 class SeriesController extends Controller
@@ -14,10 +15,10 @@ class SeriesController extends Controller
     * esse request pode ter url, várias coisas e já está sendo importado por padrão aqui no: use Illuminate\Http\Request;
     */
     public function index()
-    {   
+    {
         // ordenando as series em ordem alfabética
-        $series = Serie::query()->orderBy('nome')->get();
-        // $series = Serie::all();
+        // $series = Serie::query()->orderBy('nome')->get();
+        $series = Serie::all();
 
         return view('series.index')->with('series', $series);
     }
@@ -35,10 +36,17 @@ class SeriesController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate(['nome' => 'required']);
+        dd($request->all());
+        $request->validate([
+            'nome' => 'required',
+            'episodios' => 'integer',
+            'classificacao_indicativa' => 'integer'
+        ]);
 
         Serie::create([
             'nome' => $request->nome,
+            'episodios' => $request->episodios,
+            'classificacao_indicativa' => $request->clasificacao_indicativa
         ]);
 
         // ! outra forma de fazer o código acima
@@ -46,8 +54,7 @@ class SeriesController extends Controller
         // $serie = new Serie();
         // $serie->nome = $nomeSerie;
         // $serie->save();
-
-        return redirect()->route('series');
+        return redirect()->route('series.index');
     }
 
     /**
