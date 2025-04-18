@@ -30,15 +30,17 @@
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-light" type="submit">Procurar</button>
+                </form>
             </div>
+
         </nav>
     </header>
 
-    <div class="container">
+    <main class="container">
         <h2>{{ $title }}</h2>
         {{-- é chamado de slot tudo que vai ficar no corpo do nosso site --}}
         {{ $slot }}
-    </div>
+    </main>
 </body>
 
 </html>

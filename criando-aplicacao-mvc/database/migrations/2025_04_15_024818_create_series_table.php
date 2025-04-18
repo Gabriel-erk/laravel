@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nome', 128);
             $table->integer('episodios');
-            $table->integer('clasificacao_indicativa');
+            $table->integer('classificacao_indicativa');
             $table->timestamps();
         });
     }

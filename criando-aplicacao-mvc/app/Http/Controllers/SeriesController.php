@@ -36,17 +36,17 @@ class SeriesController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        // dd($request->all());
         $request->validate([
             'nome' => 'required',
-            'episodios' => 'integer',
-            'classificacao_indicativa' => 'integer'
+            'episodios' => 'required|integer',
+            'classificacao_indicativa' => 'required|integer'
         ]);
 
         Serie::create([
             'nome' => $request->nome,
             'episodios' => $request->episodios,
-            'classificacao_indicativa' => $request->clasificacao_indicativa
+            'classificacao_indicativa' => $request->classificacao_indicativa
         ]);
 
         // ! outra forma de fazer o código acima
@@ -54,7 +54,7 @@ class SeriesController extends Controller
         // $serie = new Serie();
         // $serie->nome = $nomeSerie;
         // $serie->save();
-        return redirect()->route('series.index');
+        return redirect()->route('series');
     }
 
     /**
